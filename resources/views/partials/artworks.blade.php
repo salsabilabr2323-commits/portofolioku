@@ -103,27 +103,23 @@
                         playsinline
                         preload="metadata"
                         ontimeupdate="if (this.currentTime >= 5) {
-        this.pause();
         this.currentTime = 5;
-    }">
-                        <source
-                            src="{{ asset('videos/' . $art['file']) }}"
-                            type="video/mp4">
-                        Browser kamu tidak mendukung pemutaran video.
-                    </video>
+        this.pause();
+    }"
+                        aria-label="{{ $art['title'] }}">
 
-                    @else
-                    <a href="{{ $art['instagram_url'] }}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="block w-full h-full">
-                        <img
-                            src="{{ asset('artworks/' . $art['file']) }}"
-                            alt="{{ $art['title'] }}"
-                            loading="lazy"
-                            class="w-full h-full object-cover transition duration-500 hover:scale-105">
-                    </a>
-                    @endif
+                        @else
+                        <a href="{{ $art['instagram_url'] }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="block w-full h-full">
+                            <img
+                                src="{{ asset('artworks/' . $art['file']) }}"
+                                alt="{{ $art['title'] }}"
+                                loading="lazy"
+                                class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                        </a>
+                        @endif
                 </div>
 
                 <!-- ARTWORK INFORMATION -->
